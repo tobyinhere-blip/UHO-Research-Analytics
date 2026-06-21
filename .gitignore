@@ -1,0 +1,12 @@
+# Abaikan semua file dan folder secara default (agar tidak membebani Streamlit Cloud)
+*
+
+# Tapi KECUALIKAN (jangan abaikan) 4 file sakti ini:
+!app.py
+!dosen_uho_ml_ready.csv
+!requirements.txt
+!.gitignore
+
+# KECUALIKAN juga folder .streamlit dan isinya
+!.streamlit/
+!.streamlit/*

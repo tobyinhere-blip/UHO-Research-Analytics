@@ -59,6 +59,10 @@ st.markdown("""
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         position: relative;
         overflow: hidden;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
     .sd-card:hover {
         transform: translateY(-8px) scale(1.01);
@@ -104,12 +108,13 @@ st.markdown("""
     }
     
     .sd-kpi-title {
-        font-size: 0.875rem;
-        font-weight: 600;
+        font-size: 0.8rem;
         color: #94A3B8;
+        font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 0.05em;
         margin-bottom: 8px;
+        line-height: 1.4;
     }
     
     .sd-kpi-value {
