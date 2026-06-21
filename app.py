@@ -318,6 +318,7 @@ with tab1:
                     var option = {{
                         tooltip: {{
                             trigger: 'item',
+                            confine: true,
                             formatter: '{{b}}: {{c}} Dosen ({{d}}%)',
                             backgroundColor: '#0F172A',
                             textStyle: {{ color: '#E2E8F0', fontFamily: 'Instrument Sans', fontSize: 14 }},
