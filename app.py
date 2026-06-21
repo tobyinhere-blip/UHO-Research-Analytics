@@ -266,13 +266,13 @@ total_cit_gs = int(df['Sitasi_GS'].sum())
 
 c1, c2, c3, c4 = st.columns(4)
 with c1:
-    st.markdown(f'<div class="sd-card"><div class="sd-kpi-title">Total Dosen Tersertifikasi</div><div class="sd-kpi-value">{total_dosen:,}</div></div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="sd-card"><div class="sd-kpi-title">Total Dosen Tersertifikasi</div><div class="sd-kpi-value">{f"{total_dosen:,}".replace(",", ".")}</div></div>', unsafe_allow_html=True)
 with c2:
-    st.markdown(f'<div class="sd-card"><div class="sd-kpi-title">Rata-rata Sinta Score 3 Tahun</div><div class="sd-kpi-value">{avg_sinta_3yr:,}</div></div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="sd-card"><div class="sd-kpi-title">Rata-rata Sinta Score 3 Tahun</div><div class="sd-kpi-value">{f"{avg_sinta_3yr:,}".replace(",", ".")}</div></div>', unsafe_allow_html=True)
 with c3:
-    st.markdown(f'<div class="sd-card"><div class="sd-kpi-title">Total Publikasi Universitas</div><div class="sd-kpi-value">{total_pub_gs:,}</div></div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="sd-card"><div class="sd-kpi-title">Total Publikasi Universitas</div><div class="sd-kpi-value">{f"{total_pub_gs:,}".replace(",", ".")}</div></div>', unsafe_allow_html=True)
 with c4:
-    st.markdown(f'<div class="sd-card"><div class="sd-kpi-title">Total Sitasi Global</div><div class="sd-kpi-value">{total_cit_gs:,}</div></div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="sd-card"><div class="sd-kpi-title">Total Sitasi Global</div><div class="sd-kpi-value">{f"{total_cit_gs:,}".replace(",", ".")}</div></div>', unsafe_allow_html=True)
 
 
 # ==========================================
