@@ -124,6 +124,30 @@ st.markdown("""
         color: #F8FAFC;
     }
     
+    .kpi-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        margin-bottom: 20px;
+    }
+    @media (max-width: 768px) {
+        .kpi-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        .sd-card { margin-bottom: 0px; }
+    }
+    @media (max-width: 480px) {
+        .kpi-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+        .sd-kpi-title { font-size: 0.65rem; }
+        .sd-kpi-value { font-size: 1.5rem; }
+        .sd-card { padding: 16px; margin-bottom: 0px; }
+    }
+    
+    
     /* Minimalist Profile Detail Card */
     .profile-header {
         border-bottom: 1px solid #334155;
@@ -264,15 +288,15 @@ avg_sinta_3yr = int(df['Sinta_Score_3Yr'].mean())
 total_pub_gs = int(df['Total_Publikasi_GS'].sum())
 total_cit_gs = int(df['Sitasi_GS'].sum())
 
-c1, c2, c3, c4 = st.columns(4)
-with c1:
-    st.markdown(f'<div class="sd-card"><div class="sd-kpi-title">Total Dosen Tersertifikasi</div><div class="sd-kpi-value">{f"{total_dosen:,}".replace(",", ".")}</div></div>', unsafe_allow_html=True)
-with c2:
-    st.markdown(f'<div class="sd-card"><div class="sd-kpi-title">Rata-rata Sinta Score 3 Tahun</div><div class="sd-kpi-value">{f"{avg_sinta_3yr:,}".replace(",", ".")}</div></div>', unsafe_allow_html=True)
-with c3:
-    st.markdown(f'<div class="sd-card"><div class="sd-kpi-title">Total Publikasi Universitas</div><div class="sd-kpi-value">{f"{total_pub_gs:,}".replace(",", ".")}</div></div>', unsafe_allow_html=True)
-with c4:
-    st.markdown(f'<div class="sd-card"><div class="sd-kpi-title">Total Sitasi Global</div><div class="sd-kpi-value">{f"{total_cit_gs:,}".replace(",", ".")}</div></div>', unsafe_allow_html=True)
+kpi_html = f"""
+<div class="kpi-grid">
+    <div class="sd-card"><div class="sd-kpi-title">Total Dosen Tersertifikasi</div><div class="sd-kpi-value">{f"{total_dosen:,}".replace(",", ".")}</div></div>
+    <div class="sd-card"><div class="sd-kpi-title">Rata-rata Sinta Score 3 Tahun</div><div class="sd-kpi-value">{f"{avg_sinta_3yr:,}".replace(",", ".")}</div></div>
+    <div class="sd-card"><div class="sd-kpi-title">Total Publikasi Universitas</div><div class="sd-kpi-value">{f"{total_pub_gs:,}".replace(",", ".")}</div></div>
+    <div class="sd-card"><div class="sd-kpi-title">Total Sitasi Global</div><div class="sd-kpi-value">{f"{total_cit_gs:,}".replace(",", ".")}</div></div>
+</div>
+"""
+st.markdown(kpi_html, unsafe_allow_html=True)
 
 
 # ==========================================
