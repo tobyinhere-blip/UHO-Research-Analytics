@@ -279,8 +279,12 @@ def predict_future_pubs(hist_data):
 # ==========================================
 # 2. HEADER & KPI (SATU DATA STYLE)
 # ==========================================
-st.markdown('<p class="sd-title">UHO Research & Analytics</p>', unsafe_allow_html=True)
-st.markdown('<p class="sd-subtitle">Pusat Intelijen Data & Prediksi Kinerja Tri Dharma Dosen Universitas Halu Oleo (Powered by ML)</p>', unsafe_allow_html=True)
+st.markdown('''
+<div style="margin-bottom: 20px;">
+    <p class="sd-title">UHO Research & Analytics</p>
+    <p class="sd-subtitle" style="margin-top: 8px;">Pusat Intelijen Data & Prediksi Kinerja Tri Dharma Dosen Universitas Halu Oleo (Powered by ML)</p>
+</div>
+''', unsafe_allow_html=True)
 
 # KPI Cards
 total_dosen = len(df)
