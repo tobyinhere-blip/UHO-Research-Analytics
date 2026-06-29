@@ -38,7 +38,7 @@ st.markdown("""
         background: -webkit-linear-gradient(45deg, #38BDF8, #818CF8);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        margin-bottom: -10px;
+        margin-bottom: 8px;
         letter-spacing: -0.5px;
     }
     .sd-subtitle {
