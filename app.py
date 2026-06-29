@@ -418,7 +418,8 @@ with tab1:
             fig2.update_traces(texttemplate='%{text:,.0f}', textposition="outside", 
                                marker_line_width=0, cliponaxis=False)
             chart_height = max(400, top_n * 35)
-            fig2.update_layout(height=chart_height, yaxis={'categoryorder':'total ascending'}, margin=dict(t=10, b=10, l=10, r=10),
+            fig2.update_layout(height=chart_height, yaxis=dict(categoryorder='total ascending', automargin=True, tickfont=dict(size=11)), 
+                               margin=dict(t=10, b=10, r=20),
                                coloraxis_showscale=False, yaxis_title=None, xaxis_title=None,
                                xaxis=dict(showgrid=True, gridcolor='#334155', gridwidth=1, griddash='dash'),
                                plot_bgcolor='rgba(0,0,0,0)', paper_bgcolor='rgba(0,0,0,0)',
@@ -461,7 +462,7 @@ with tab1:
                            color_discrete_sequence=['#38BDF8', '#818CF8', '#34D399', '#F472B6', '#FBBF24'])
             fig3.update_traces(mode='lines+markers', line=dict(width=3, shape='spline'), marker=dict(size=6))
             
-        fig3.update_layout(height=450, margin=dict(t=10, b=10, l=10, r=10), plot_bgcolor='rgba(0,0,0,0)', paper_bgcolor='rgba(0,0,0,0)',
+        fig3.update_layout(height=450, margin=dict(t=10, b=10, r=10), plot_bgcolor='rgba(0,0,0,0)', paper_bgcolor='rgba(0,0,0,0)',
                            hovermode="x unified", xaxis_title=None, yaxis_title=None,
                            font=dict(color='#E2E8F0'),
                            xaxis=dict(showgrid=True, gridcolor='#334155', griddash='dash'),
